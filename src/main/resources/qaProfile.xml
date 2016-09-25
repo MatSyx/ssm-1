@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <beans profile="qa">
+        <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"
+              p:url="jdbc:mysql://127.0.0.1:3306/springmybatis"
+              p:driverClassName="com.mysql.jdbc.Driver" p:username="root" p:password="wrong" p:initialSize="20"
+              p:maxActive="30"/>
+    </beans>
+</beans>
